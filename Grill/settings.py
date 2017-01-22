@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'GrillMe',
+    'bootstrap3',
+    'dashing',
+    'bootstrap_ui',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Grill.urls'
+
+DJANGO_BOOTSTRAP_UI_THEME = 'bootswatch-superhero'
 
 TEMPLATES = [
     {

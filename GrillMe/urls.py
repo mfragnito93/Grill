@@ -13,15 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
-from dashing.utils import router
 
-
-from GrillMe import urls
+from GrillMe import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^GrillMe/', include('GrillMe.urls')),
-    url(r'^dashboard/', include(router.urls)),
+    url(r'^list/$', views.FoodList.as_view(), name='food_list'),
+    url(r'^new/$', views.FoodCreate.as_view(), name='food_new'),
+    url(r'^edit/(?P<pk>\d+)$', views.FoodUpdate.as_view(), name='food_edit'),
+    url(r'^delete/(?P<pk>\d+)$', views.FoodDelete.as_view(), name='food_delete'),
+    url(r'^$', views.Index.as_view(), name='index'),
 ]
