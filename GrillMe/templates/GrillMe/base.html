@@ -1,5 +1,9 @@
 {% extends "GrillMe/navbar.html" %}
-{% load staticfiles %}
+{% load static from staticfiles %}
+{% block head-css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'GrillMe/clock.css' %}" />
+{% endblock %}
 {% block content %}
 {% block body %}{% endblock %}
 {% endblock %}

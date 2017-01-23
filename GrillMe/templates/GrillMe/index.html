@@ -1,19 +1,30 @@
 {% extends "GrillMe/base.html" %}
-{% load static %}
+{% load static from staticfiles %}
 {% block body %}
-<h1>
+<!--  <h1>
     GRILLME
 </h1>
 
-<p id="demo"></p>
-<script type="text/javascript" src="{% static 'GrilMe/countdown.js' %}"></script>
-<script>
-    window.onload = function () {
-    var fiveMinutes = 60 * 5,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
-};
-</script>
-<div>Registration closes in <span id="time"></span> minutes!</div>
+<p id="demo"></p>-->
+<button type="button" id="start" onclick="myTimer.Start()">Try it</button>
+<button type="button" id="reset" onclick="myTimer.Reset()">Try it</button>
+<button type="button" id="stop" onclick="myTimer.Stop()">Pause</button>
 
+<!--<div>Registration closes in <span id="time"></span> minutes!</div>-->
+<script src="{% static 'GrillMe/countdown.js' %}"></script>
+<h1>Countdown Clock</h1>
+<div id="clockdiv">
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
 {% endblock %}
