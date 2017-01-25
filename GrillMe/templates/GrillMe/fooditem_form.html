@@ -1,20 +1,21 @@
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
-
+{% extends "GrillMe/base.html" %}
+{% load static from staticfiles %}
 {% load bootstrap3 %}
-
+{% block body %}
+{{ block.super }}
 {# Display a form #}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-centered">
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button class="btn btn-warning" onclick="window.history.back();">Cancel</button>
+        </form>
+    </div>
+  </div>
+</div>
 
-<form action="/url/to/submit/" method="post" class="form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-        <button type="submit" class="btn btn-primary">
-            {% bootstrap_icon "star" %} Submit
-        </button>
-    {% endbuttons %}
-</form>
-
+{% endblock %}
 

@@ -1,4 +1,17 @@
-<form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit" />
-</form>
+{% extends "GrillMe/base.html" %}
+{% load bootstrap_ui_tags %}
+{% load bootstrap3 %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-centered">
+        <form method="post">{% csrf_token %}
+            <h1>{{ object }}</h1>
+            <br>
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <button class="btn btn-warning" onclick="window.history.back();">Cancel</button>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}

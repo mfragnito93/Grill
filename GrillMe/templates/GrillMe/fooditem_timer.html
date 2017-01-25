@@ -2,21 +2,18 @@
 {% load static from staticfiles %}
 {% block body %}
 {{ block.super }}
-<!--  <h1>
-    GRILLME
-</h1>
-
-<p id="demo"></p>-->
-<!--<div>Registration closes in <span id="time"></span> minutes!</div>-->
 <head>
   <script src="{% static 'GrillMe/countdown.js' %}"></script>
+    <script type="text/javascript">
+        var myTimer = new Timer("{{object.get_timer}}",'clockdiv');
+    </script>
 </head>
 <body onload="myTimer.Reset()">
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-centered">
       <div id="clockdiv">
-        <h1>Grill Timer</h1>
+        <h1>{{ object.get_temperature }}</h1>
         <div>
           <span class="hours"></span>
           <div class="smalltext">Hours</div>
@@ -32,7 +29,7 @@
         <br>
         <button type="button" id="start" class="btn btn-success" onclick="myTimer.Start()">Start</button>
         <button type="button" id="stop" class="btn btn-warning" onclick="myTimer.Stop()">Pause</button>
-      <button type="button" id="reset" class="btn btn-danger" onclick="myTimer.Reset()">Reset</button>
+        <button type="button" id="reset" class="btn btn-danger" onclick="myTimer.Reset()">Reset</button>
       </div>
     </div>
   </div>

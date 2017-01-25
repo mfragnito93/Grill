@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^new/$', views.FoodCreate.as_view(), name='food_new'),
     url(r'^edit/(?P<pk>\d+)$', views.FoodUpdate.as_view(), name='food_edit'),
     url(r'^delete/(?P<pk>\d+)$', views.FoodDelete.as_view(), name='food_delete'),
+    url(r'^timer/(?P<pk>\d+)$', views.FoodTimer.as_view(), name='food_timer'),
     url(r'^$', views.Index.as_view(), name='index'),
 ]

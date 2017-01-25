@@ -76,12 +76,3 @@ var Timer = function(duration,id)
 
 
 };
-
-function test(){
-  var clock = document.getElementById('clockdiv');
-  var hoursSpan = clock.querySelector('.hours');
-  hoursSpan.innerHTML = '0'
-}
-
-
-var myTimer = new Timer(100,'clockdiv');

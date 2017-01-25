@@ -1,27 +1,30 @@
-{% extends "GrillMe/navbar.html" %}
+{% extends "GrillMe/base.html" %}
 {% load bootstrap_ui_tags %}
-{% block content %}
-
-    <h1>Food List</h1>
-    <div class = "table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Food</th>
-                    <th>Type</th>
-                    <th>Duration</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for food_item in object_list %}
-                    <tr>
-                        <td><a href="{% url "food_edit" food_item.id %}">{{ food_item.name }}</a></td>
-                        <td>{{ food_item.type }}</td>
-                        <td>{{ food_item.timer }}</td>
+{% load bootstrap3 %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+        <h1>Food List</h1>
+            <a href='{% url 'food_new' %}'">
+                    {% bootstrap_icon "plus" %} Add
+            </a>
+        <div class = "table-responsive">
+            <table class="table table-hover table-striped" style="font-size: 15px">
+                <tbody>
+                {% for food_item in object_list %}
+                    <tr onclick="getElementById('{{ food_item.id }}').click()" style="cursor: pointer">
+                        <a href="{% url "food_timer" food_item.id %}" id="{{ food_item.id }}">
+                        <td align="center" valign="middle">{{ food_item.name }}</td>
+                        </a>
+                        <td><a href="{% url "food_edit" food_item.id %}">{% bootstrap_icon "pencil" %}</a></td>
+                        <td><a href="{% url "food_delete" food_item.id %}">{% bootstrap_icon "remove" %}</a></td>
                     </tr>
-
-            {% endfor %}
-            </tbody>
-        </table>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-{% endblock content %}
+  </div>
+</div>
+{% endblock body %}

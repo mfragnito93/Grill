@@ -1,18 +1,5 @@
-body{
-	text-align: center;
-	background: #00ECB9;
-  font-family: sans-serif;
-  font-weight: 100;
-}
-
-h1{
-  color: #396;
-  font-weight: 100;
-  font-size: 40px;
-  margin: 40px 0px 20px;
-}
-
 #clockdiv{
+    text-align: center;
 	font-family: sans-serif;
 	color: #fff;
 	display: inline-block;
@@ -21,21 +8,38 @@ h1{
 	font-size: 30px;
 }
 
+#clockdiv > h1 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
 #clockdiv > div{
 	padding: 10px;
 	border-radius: 3px;
-	background: #00BF96;
+	background: #4E5D6C;
 	display: inline-block;
 }
 
 #clockdiv div > span{
 	padding: 15px;
 	border-radius: 3px;
-	background: #00816A;
+	background: #1B3B54;
 	display: inline-block;
 }
 
 .smalltext{
 	padding-top: 5px;
 	font-size: 16px;
+}
+
+.col-centered{
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+}
+
+.table{
+    font-size: 15px;
 }
