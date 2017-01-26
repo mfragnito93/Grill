@@ -12,8 +12,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-centered">
+      <h1>{{ object.get_temperature }}</h1>
+      <br>
       <div id="clockdiv">
-        <h1>{{ object.get_temperature }}</h1>
         <div>
           <span class="hours"></span>
           <div class="smalltext">Hours</div>
@@ -27,15 +28,15 @@
           <div class="smalltext">Seconds</div>
         </div>
         <br>
+        <br>
         <button type="button" id="start" class="btn btn-success" onclick="myTimer.Start()">Start</button>
         <button type="button" id="stop" class="btn btn-warning" onclick="myTimer.Stop()">Pause</button>
         <button type="button" id="reset" class="btn btn-danger" onclick="myTimer.Reset()">Reset</button>
+        <br>
+        <br>
+        <h5 style="color:#606060;text-align:left">Notes:</h5>
+        <textarea readonly class="form-control" cols="40" rows="7">{{ object.notes }}</textarea>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-centered">
-    <h1>This is where the grill table will go</h1>
     </div>
   </div>
 </div>

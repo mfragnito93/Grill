@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'dashing',
     'bootstrap_ui',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Grill.urls'
 
-DJANGO_BOOTSTRAP_UI_THEME = 'bootswatch-superhero'
+DJANGO_BOOTSTRAP_UI_THEME = 'bootswatch-yeti'
 
 TEMPLATES = [
     {

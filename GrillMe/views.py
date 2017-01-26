@@ -15,12 +15,12 @@ class FoodList(ListView):
 class FoodCreate(CreateView):
     model = FoodItem
     success_url = reverse_lazy('food_list')
-    fields = ['name','type','timer','temperature']
+    fields = ['name', 'type', 'hours', 'minutes', 'seconds', 'temperature', 'notes']
 
 class FoodUpdate(UpdateView):
     model = FoodItem
     success_url = reverse_lazy('food_list')
-    fields = ['name', 'type', 'timer','temperature']
+    fields = ['name', 'type', 'hours', 'minutes', 'seconds', 'temperature', 'notes']
 
 class FoodDelete(DeleteView):
     model = FoodItem

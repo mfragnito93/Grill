@@ -1,21 +1,41 @@
 {% extends "GrillMe/base.html" %}
 {% load static from staticfiles %}
 {% load bootstrap3 %}
+{% load widget_tweaks %}
 {% block body %}
 {{ block.super }}
 {# Display a form #}
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-centered">
         <form method="post" class="form">
             {% csrf_token %}
-            {% bootstrap_form form %}
-            <button type="submit" class="btn btn-success">Submit</button>
-            <button class="btn btn-warning" onclick="window.history.back();">Cancel</button>
+            <row>
+                <div class="col-xs-12 col-centered">
+                    {% bootstrap_field form.name %}
+                    {% bootstrap_field form.type %}
+                </div>
+            </row>
+            <row>
+                <div class="col-xs-4" style="text-align:center">
+                    {% bootstrap_field form.hours%}
+                </div>
+                <div class="col-xs-4" style="text-align:center">
+                    {% bootstrap_field form.minutes%}
+                </div>
+                <div class="col-xs-4" style="text-align:center">
+                    {% bootstrap_field form.seconds%}
+                </div>
+            </row>
+            <row>
+                <div class="col-xs-12 col-centered">
+                    {% bootstrap_field form.temperature %}
+                    {% bootstrap_field form.notes|attr:"rows:7" %}
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button class="btn btn-warning" onclick="window.history.back();">Cancel</button>
+                </div>
+            </row>
         </form>
     </div>
-  </div>
 </div>
-
+<br>
 {% endblock %}
 
