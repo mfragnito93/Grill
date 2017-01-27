@@ -25,7 +25,7 @@ SECRET_KEY = 'vy21ra-!5naj+@am_^flj@#w$f&dty2q=n3@(rnkl@!yfk%0u6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['138.68.3.71']
 
 
 # Application definition
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'GrillMe',
     'bootstrap3',
-    'dashing',
     'bootstrap_ui',
     'widget_tweaks',
 ]
