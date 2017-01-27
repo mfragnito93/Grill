@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Grill.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+# TODO: set the database back to production before pushing
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
